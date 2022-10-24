@@ -20,18 +20,35 @@ void to_lower(std::string& str) {
 int count_sym(std::string str) {
 	int counter = 0;
 	
-	
-	getline(std::cin, str);
 	for (int i = 0; i < str.length(); i++) {
+		
 		if (str[i] == ' ' || str[i] == '.' || str[i] == ',' || str[i] == '!' || str[i] == '?')
 			counter++;
 	}
 	return counter;
 }
 
+
+char find(std::string str, char x) {
+	char a;
+	for (int i = 0; i < str.length(); i++) {
+		if (str[i] != x)
+			a = '!';
+		return a;
+	}	
+	int m = str.rfind(x);
+	str.substr(m);
+
+	for (int i = str.rfind(x); i < str.length(); i++) {
+		std::string ret;
+		std::cout << str[i];
+	}
+	return 0;
+}
+
 int main() {
 	setlocale(LC_ALL, "Russian");
-	int m, n;
+
 
 	std::cout << "Task 1.\n";
 	std::string str = "Hello, world!";
@@ -56,7 +73,7 @@ int main() {
 		std::cout << "Введенное слово " << palindrom << " не палиндром" << ".\n";
 
 
-	std::cout << "Tasl 3.\n";
+	std::cout << "Task 3.\n";
 	std::string str1;
 	std:: cout << "Введите фразу с символами: ";
 	
@@ -64,9 +81,12 @@ int main() {
 	
 	std::cout << "Количество не буквенных символов в фразе равно: " << count_sym(str1) << ".\n";
 
+	
 
-
-
+	std::cout << "Task 4.\n";
+	std::string str2 = "Hello world!";
+	char sym2 = 'o';
+	std::cout << find(str2, sym2);
 
 
 
