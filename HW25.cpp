@@ -19,12 +19,11 @@ void to_lower(std::string& str) {
 
 int count_sym(std::string str) {
 	int counter = 0;
-	
-	for (int i = 0; i < str.length(); i++) {
-		
-		if (str[i] == ' ' || str[i] == '.' || str[i] == ',' || str[i] == '!' || str[i] == '?')
-			counter++;
-	}
+	char arr[5]{ ' ', '.', ',', '!', '?' };
+	for (int i = 0; i < str.length(); i++)
+		for (int j = 0; j < 5; j++)
+			if (str[i] == arr[j])
+				counter++;
 	return counter;
 }
 
